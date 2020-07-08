@@ -386,7 +386,7 @@ class ModuleHook(object):
                 logger.debug(
                     'Skipping module hook %r from %r because a hook for %s has'
                     ' already been loaded.',
-                    *os.path.split(self.hook_filename)[::-1], self.module_name
+                    *os.path.split(self.hook_filename)[::-1] + (self.module_name,)
                 )
                 # Set the default attributes to empty instances of the type.
                 for attr_name, \
